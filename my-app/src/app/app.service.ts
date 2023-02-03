@@ -9,13 +9,15 @@ export class AppService {
   constructor(private http: HttpClient) { }
 
   rootURL = 'https://angularnodepoc.azurewebsites.net/api';
+  //rootURL = '/api';
+
 
   getUsers() {
     return this.http.get(this.rootURL + '/users');
   }
 
   addUser(user: any) {
-    return this.http.post(this.rootURL + '/user', {user});
+    return this.http.post(this.rootURL + '/user', { user });
   }
 
 }
