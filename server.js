@@ -1,10 +1,11 @@
 const express = require('express');
 const app = express(),
       bodyParser = require("body-parser");
-      port = 3080;
+      port = 8080;
 
 const users = [];
 
+app.use(bodyParser.urlencoded());
 app.use(bodyParser.json());
 app.use(express.static(process.cwd()+"/my-app/dist/angular-nodejs-example/"));
 
@@ -22,6 +23,9 @@ app.get('/', (req,res) => {
   res.sendFile(process.cwd()+"/my-app/dist/angular-nodejs-example/index.html")
 });
 
-app.listen(port, () => {
-    console.log(`Server listening on the port::${port}`);
+app.listen(port, (err) => {
+  if(err) {
+    console.log(err)
+  }
+   console.log(`Server listening on the port:!!!::${port}`);
 });
