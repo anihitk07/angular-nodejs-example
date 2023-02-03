@@ -8,7 +8,7 @@ export class AppService {
 
   constructor(private http: HttpClient) { }
 
-  rootURL = '/api';
+  rootURL = 'https://angularnodepoc.azurewebsites.net/api';
 
   getUsers() {
     return this.http.get(this.rootURL + '/users');
